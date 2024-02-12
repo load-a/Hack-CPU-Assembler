@@ -1,6 +1,13 @@
-# This appears longer then the list provided in the book. This is because
-# I have accounted for commutative operations, which is not necessary for the project.
+# Template for assembled operational commands. Used only for C-instructions.
+OPERATION_COMMAND = "%<operation>s%<destination>s000"
 
+# Template for assembled jump commands. Used only for C-instructions.
+JUMP_COMMAND = "%<operation>s000%<condition>s"
+
+# The default starting address for variables on the Hack CPU.
+INITIAL_VARIABLE_ADDRESS = 16
+
+# Binaries for each destination of a C-instruction.
 DESTINATION = {
 	'0' => 		"000", 
 	'M'	=> 		"001",
@@ -20,12 +27,15 @@ DESTINATION = {
 	'DMA'	=> 	"111",
 }
 
-LITERAL_OPERATION = { # i.e M=-1
+# The binaries for the integer-literal operations.
+# @example M=-1
+LITERAL_OPERATION = { 
 	'0'		=> 		"1110101010", 
 	'1'		=> 		"1110111111",
 	'-1'	=> 		"1110111010",
 }
 
+# The binaries for all Address-only operations.
 ADDRESS_OPERATION = {
 	'A'		=> 		"1110110000",
 	'!A'	=> 		"1110110001",
@@ -34,6 +44,7 @@ ADDRESS_OPERATION = {
 	'A-1'	=> 		"1110110010",
 }
 
+# The binaries for all Data Register operations.
 DATA_OPERATION = {
 	'D'		=> 		"1110001100",
 	'!D'	=> 		"1110001101",
@@ -60,6 +71,7 @@ DATA_OPERATION = {
 	'M|D'	=> 	"1111010101",
 }
 
+# The binaries for all Memory(value)-only operations.
 MEMORY_OPERATION = {
 	'M' 	=>	"1111110000",
 	'!M'	=> 	"1111110001",
@@ -68,8 +80,10 @@ MEMORY_OPERATION = {
 	'M-1'	=> 	"1111110010",
 }
 
+# A quick reference to any operation binaries. These are used in both types of instruction.
 ANY_OPERATION = MEMORY_OPERATION.merge(DATA_OPERATION, ADDRESS_OPERATION, LITERAL_OPERATION)
 
+# The binaries for every jump condition.
 JUMP_TYPE = {
 	'JGT' => 	"001",
 	'JEQ' =>	"010",
@@ -80,6 +94,7 @@ JUMP_TYPE = {
 	'JMP' => 	"111"
 }
 
+# The binary representations for each of Hack Assembly's reserved words.
 RESERVED_WORD = {
 	"@R0" =>  	"0000000000000000",
 	"@R1" =>  	"0000000000000001",
@@ -106,3 +121,6 @@ RESERVED_WORD = {
 	"@SCREEN" =>	 	"0100000000000000",
 	"@KBD" =>	 			"0110000000000000",	
 }
+
+# This appears longer then the list provided in the book. This is because
+# I have accounted for commutative operations, which is not necessary for the project.

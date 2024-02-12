@@ -3,10 +3,8 @@ require_relative 'constants.rb'
 
 raise "Please pass a file name." if ARGV[0].nil?
 
-file_name = ARGV[0]
+source_code = ARGV[0]
 
-AssemblyFile.new(file_name) 
+binary_file = source_code.to_s.sub('.asm', '.hack')
 
-new_name = file_name.to_s.sub('.asm', '.hack')
-
-IO.write(new_name, AssemblyFile.new(ARGV[0]).to_s.join("\n"))
+IO.write(binary_file, AssemblyFile.new(source_code).to_s.join("\n"))

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Top Level Namespace
+  
+    &mdash; Documentation by YARD 0.9.34
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo;
+    
+    
+    <span class="title">Top Level Namespace</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Top Level Namespace
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="AssemblyFile.html" title="AssemblyFile (class)">AssemblyFile</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="OPERATION_COMMAND-constant" class="">OPERATION_COMMAND =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Template for assembled operational commands. Used only for C-instructions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%&lt;operation&gt;s%&lt;destination&gt;s000</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+        <dt id="JUMP_COMMAND-constant" class="">JUMP_COMMAND =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Template for assembled jump commands. Used only for C-instructions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%&lt;operation&gt;s000%&lt;condition&gt;s</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+        <dt id="INITIAL_VARIABLE_ADDRESS-constant" class="">INITIAL_VARIABLE_ADDRESS =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The default starting address for variables on the Hack CPU.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='int'>16</span></pre></dd>
+      
+        <dt id="DESTINATION-constant" class="">DESTINATION =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Binaries for each destination of a C-instruction.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> 
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>M</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>001</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> 
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DM</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MD</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>100</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AM</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MA</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AD</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>110</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DA</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>110</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ADM</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AMD</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MAD</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MDA</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DAM</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DMA</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="LITERAL_OPERATION-constant" class="">LITERAL_OPERATION =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The binaries for the integer-literal operations.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>M=-1</p>
+</div></p>
+      
+      <pre class="example code"><code></code></pre>
+    
+  </div>
+
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span> 
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span>		<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110101010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> 
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1</span><span class='tstring_end'>&#39;</span></span>		<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110111111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-1</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110111010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="ADDRESS_OPERATION-constant" class="">ADDRESS_OPERATION =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The binaries for all Address-only operations.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A</span><span class='tstring_end'>&#39;</span></span>		<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110110000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>!A</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110110001</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-A</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111110011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A+1</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110110111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A-1</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110110010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="DATA_OPERATION-constant" class="">DATA_OPERATION =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The binaries for all Data Register operations.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D</span><span class='tstring_end'>&#39;</span></span>		<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110001100</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>!D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110001101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110001111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D+1</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110011111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D-1</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110001110</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D+A</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110000010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A+D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110000010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A-D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110000111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> 
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D-A</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110010011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D&amp;A</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110000000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A&amp;D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110000000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D|A</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110010101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A|D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1110010101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>M+D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111000010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D+M</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111000010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>M-D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111000111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D-M</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111010011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D&amp;M</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111000000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>M&amp;D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111000000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>D|M</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111010101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>M|D</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111010101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="MEMORY_OPERATION-constant" class="">MEMORY_OPERATION =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The binaries for all Memory(value)-only operations.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>M</span><span class='tstring_end'>&#39;</span></span> 	<span class='op'>=&gt;</span>	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111110000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>!M</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111110001</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-M</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111110011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>M+1</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111110111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>M-1</span><span class='tstring_end'>&#39;</span></span>	<span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1111110010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="ANY_OPERATION-constant" class="">ANY_OPERATION =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>A quick reference to any operation binaries. These are used in both types of instruction.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="top-level-namespace.html#MEMORY_OPERATION-constant" title="MEMORY_OPERATION (constant)">MEMORY_OPERATION</a></span></span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="top-level-namespace.html#DATA_OPERATION-constant" title="DATA_OPERATION (constant)">DATA_OPERATION</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#ADDRESS_OPERATION-constant" title="ADDRESS_OPERATION (constant)">ADDRESS_OPERATION</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#LITERAL_OPERATION-constant" title="LITERAL_OPERATION (constant)">LITERAL_OPERATION</a></span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="JUMP_TYPE-constant" class="">JUMP_TYPE =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The binaries for every jump condition.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JGT</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>001</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JEQ</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span>	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JGE</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span>	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> 
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JLT</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>100</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JNE</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JLE</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>110</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JMP</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>111</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="RESERVED_WORD-constant" class="">RESERVED_WORD =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The binary representations for each of Hack Assembly’s reserved words.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R0</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R1</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000001</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R2</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R3</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R4</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000100</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R5</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R6</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000110</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R7</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R8</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000001000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R9</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>  	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000001001</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R10</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000001010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R11</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000001011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R12</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000001100</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R13</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000001101</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R14</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000001110</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@R15</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000001111</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@SP</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@LCL</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000001</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@ARG</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>		<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000010</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@THIS</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000011</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@THAT</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0000000000000100</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@SCREEN</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>	 	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0100000000000000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@KBD</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span>	 			<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0110000000000000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>	
+<span class='rbrace'>}</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+      <div id="footer">
+  Generated on Sun Feb 11 23:51:30 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.34 (ruby-3.2.2).
+</div>
+
+    </div>
+  </body>
+</html>

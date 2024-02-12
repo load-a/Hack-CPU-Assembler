@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: AssemblyFile
+  
+    &mdash; Documentation by YARD 0.9.34
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "AssemblyFile";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (A)</a> &raquo;
+    
+    
+    <span class="title">AssemblyFile</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: AssemblyFile
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">AssemblyFile</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>assembly_file.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A class which converts a given ‘.asm’ file into a ‘.hack’ binary executable. All methods here return arrays,  	but none of them accept arguments. This is because each method works on an instance variable,  	rather then the direct output of some previous method. Therefore, they can all be considered to return  	void, in most cases.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#label_dictionary-instance_method" title="#label_dictionary (instance method)">#<strong>label_dictionary</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Uses a table to store all label declarations that appear in the code.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#processed_code-instance_method" title="#processed_code (instance method)">#<strong>processed_code</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initially starts as a tokenized version of the source code, then gets converted into the assembled binary.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#raw_file_text-instance_method" title="#raw_file_text (instance method)">#<strong>raw_file_text</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The raw file as a list of strings.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#variable_dictionary-instance_method" title="#variable_dictionary (instance method)">#<strong>variable_dictionary</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Uses a table to store all variables in the code.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assemble_source_code-instance_method" title="#assemble_source_code (instance method)">#<strong>assemble_source_code</strong>  &#x21d2; Array&lt;String&gt; </a>
+    
+
+    
+      (also: #to_s)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generates assembly code from the tokenized source.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#extract_code-instance_method" title="#extract_code (instance method)">#<strong>extract_code</strong>  &#x21d2; Array&lt;String&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes white space and comments.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#gather_label_declarations-instance_method" title="#gather_label_declarations (instance method)">#<strong>gather_label_declarations</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Scans the code and marks each label it encounters on the label_dictionary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#gather_variables-instance_method" title="#gather_variables (instance method)">#<strong>gather_variables</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Scans the code for variable declarations and marks them in the variable_dictionary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(file_name)  &#x21d2; AssemblyFile </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of AssemblyFile.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_a_instructions-instance_method" title="#parse_a_instructions (instance method)">#<strong>parse_a_instructions</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Determines whether each token in processed_code is a reserved word, an integer literal, or a label reference.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_c_instructions-instance_method" title="#parse_c_instructions (instance method)">#<strong>parse_c_instructions</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Determines whether a token in processed_code is an operation, jump or label declaration.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#remove_label_declarations-instance_method" title="#remove_label_declarations (instance method)">#<strong>remove_label_declarations</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes all label declarations from the code.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#set_label_references-instance_method" title="#set_label_references (instance method)">#<strong>set_label_references</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Assigns each label <strong>reference</strong> into its assigned program counter address.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#set_variables-instance_method" title="#set_variables (instance method)">#<strong>set_variables</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts each variable declaration and reference into its assigned memory address.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#tokenize-instance_method" title="#tokenize (instance method)">#<strong>tokenize</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Takes the extracted code and groups each line with the appropriate Symbol, creating a token.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(file_name)  &#x21d2; <tt><span class='object_link'><a href="" title="AssemblyFile (class)">AssemblyFile</a></span></tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of AssemblyFile.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>file_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The path for the file to assemble. Looks for the file in in the working directory by default.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_file_name'>file_name</span><span class='rparen'>)</span>
+
+	<span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_raw_file_text'>raw_file_text</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_file_name'>file_name</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_readlines'>readlines</span>
+	<span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_processed_code'>processed_code</span> <span class='op'>=</span> <span class='id identifier rubyid_tokenize'>tokenize</span>
+
+	<span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_variable_dictionary'>variable_dictionary</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span>
+	<span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_label_dictionary'>label_dictionary</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="label_dictionary=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="label_dictionary-instance_method">
+  
+    #<strong>label_dictionary</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Uses a table to store all label declarations that appear in the code.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_label_dictionary'>label_dictionary</span>
+  <span class='ivar'>@label_dictionary</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="processed_code=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="processed_code-instance_method">
+  
+    #<strong>processed_code</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initially starts as a tokenized version of the source code, then gets converted into the assembled binary.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 21</span>
+
+<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:raw_file_text</span><span class='comma'>,</span> <span class='symbol'>:processed_code</span><span class='comma'>,</span> <span class='symbol'>:variable_dictionary</span><span class='comma'>,</span> <span class='symbol'>:label_dictionary</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="raw_file_text=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="raw_file_text-instance_method">
+  
+    #<strong>raw_file_text</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The raw file as a list of strings.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_raw_file_text'>raw_file_text</span>
+  <span class='ivar'>@raw_file_text</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="variable_dictionary=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="variable_dictionary-instance_method">
+  
+    #<strong>variable_dictionary</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Uses a table to store all variables in the code.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 21</span>
+
+<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:raw_file_text</span><span class='comma'>,</span> <span class='symbol'>:processed_code</span><span class='comma'>,</span> <span class='symbol'>:variable_dictionary</span><span class='comma'>,</span> <span class='symbol'>:label_dictionary</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="assemble_source_code-instance_method">
+  
+    #<strong>assemble_source_code</strong>  &#x21d2; <tt>Array&lt;String&gt;</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='to_s-instance_method'>to_s</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generates assembly code from the tokenized source.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+172
+173
+174
+175
+176
+177
+178
+179
+180</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 172</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_assemble_source_code'>assemble_source_code</span>
+	<span class='id identifier rubyid_parse_a_instructions'>parse_a_instructions</span>
+	<span class='id identifier rubyid_parse_c_instructions'>parse_c_instructions</span>
+	<span class='id identifier rubyid_gather_label_declarations'>gather_label_declarations</span>
+	<span class='id identifier rubyid_gather_variables'>gather_variables</span>
+	<span class='id identifier rubyid_set_variables'>set_variables</span>
+	<span class='id identifier rubyid_set_label_references'>set_label_references</span>
+	<span class='id identifier rubyid_remove_label_declarations'>remove_label_declarations</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract_code-instance_method">
+  
+    #<strong>extract_code</strong>  &#x21d2; <tt>Array&lt;String&gt;</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes white space and comments.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_extract_code'>extract_code</span> 
+	<span class='id identifier rubyid_raw_file_text'>raw_file_text</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_line'>line</span><span class='op'>|</span> <span class='id identifier rubyid_line'>line</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\/{2}.*</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span><span class='rbrace'>}</span> 
+							 <span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_line'>line</span><span class='op'>|</span> <span class='id identifier rubyid_line'>line</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span> 
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gather_label_declarations-instance_method">
+  
+    #<strong>gather_label_declarations</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Labels are declared with “()” and referenced with ‘@’.</p>
+</div>
+  </div>
+
+
+<p>Scans the code and marks each label it encounters on the label_dictionary.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 109</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_gather_label_declarations'>gather_label_declarations</span> 
+	<span class='id identifier rubyid_drift_correction'>drift_correction</span> <span class='op'>=</span> <span class='int'>0</span>
+
+	<span class='id identifier rubyid_processed_code'>processed_code</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+		<span class='kw'>if</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_label'>label</span> <span class='op'>=</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[\(\)]</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_label_dictionary'>label_dictionary</span><span class='lbracket'>[</span><span class='id identifier rubyid_label'>label</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>-</span> <span class='id identifier rubyid_drift_correction'>drift_correction</span>
+			<span class='id identifier rubyid_drift_correction'>drift_correction</span> <span class='op'>+=</span> <span class='int'>1</span>
+		<span class='kw'>end</span>
+	<span class='rbrace'>}</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gather_variables-instance_method">
+  
+    #<strong>gather_variables</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Variables are declared and referenced with ‘@’.</p>
+</div>
+  </div>
+
+
+<p>Scans the code for variable declarations and marks them in the variable_dictionary.</p>
+
+<p>	They are each assigned the first available address in memory.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Array</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_gather_variables'>gather_variables</span> 
+	<span class='id identifier rubyid_variable_address_counter'>variable_address_counter</span> <span class='op'>=</span> <span class='int'>0</span>
+
+	<span class='id identifier rubyid_processed_code'>processed_code</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
+
+		<span class='kw'>next</span> <span class='id identifier rubyid_e'>e</span> <span class='kw'>unless</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@</span><span class='tstring_end'>&#39;</span></span>
+		<span class='id identifier rubyid_variable'>variable</span> <span class='op'>=</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+		<span class='kw'>unless</span> <span class='id identifier rubyid_label_dictionary'>label_dictionary</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_variable'>variable</span> <span class='kw'>or</span> <span class='id identifier rubyid_variable_dictionary'>variable_dictionary</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_variable'>variable</span>
+			<span class='id identifier rubyid_variable_dictionary'>variable_dictionary</span><span class='lbracket'>[</span><span class='id identifier rubyid_variable'>variable</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#INITIAL_VARIABLE_ADDRESS-constant" title="INITIAL_VARIABLE_ADDRESS (constant)">INITIAL_VARIABLE_ADDRESS</a></span></span> <span class='op'>+</span> <span class='id identifier rubyid_variable_address_counter'>variable_address_counter</span>
+			<span class='id identifier rubyid_variable_address_counter'>variable_address_counter</span> <span class='op'>+=</span> <span class='int'>1</span>
+		<span class='kw'>end</span>
+	<span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_a_instructions-instance_method">
+  
+    #<strong>parse_a_instructions</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Determines whether each token in processed_code is a reserved word, an integer literal, or a label reference. 	It converts the first two types into their snippets of machine code, but passes the third type  	and everything else as-is to be processed later.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_a_instructions'>parse_a_instructions</span>
+
+	<span class='id identifier rubyid_processed_code'>processed_code</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_element'>element</span><span class='op'>|</span>
+		<span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_code'>code</span> <span class='op'>=</span> <span class='id identifier rubyid_element'>element</span>
+
+		<span class='kw'>next</span> <span class='id identifier rubyid_element'>element</span> <span class='kw'>unless</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>==</span> <span class='symbol'>:a_instruction</span> <span class='kw'>and</span> <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span> <span class='const'>Array</span>
+
+		<span class='kw'>if</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#RESERVED_WORD-constant" title="RESERVED_WORD (constant)">RESERVED_WORD</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_code'>code</span>
+			<span class='const'><span class='object_link'><a href="top-level-namespace.html#RESERVED_WORD-constant" title="RESERVED_WORD (constant)">RESERVED_WORD</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_code'>code</span><span class='rbracket'>]</span>
+
+		<span class='kw'>elsif</span> <span class='id identifier rubyid_code'>code</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\@\d+</span><span class='regexp_end'>/</span></span> <span class='comment'># A Numeric literal (i.e. &#39;@57&#39;)
+</span>			<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%016b</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_code'>code</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='rbracket'>]</span>
+
+		<span class='kw'>else</span> <span class='comment'># A label reference
+</span>			<span class='id identifier rubyid_code'>code</span>
+		<span class='kw'>end</span>
+	<span class='rbrace'>}</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_c_instructions-instance_method">
+  
+    #<strong>parse_c_instructions</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Determines whether a token in processed_code is an operation, jump or label declaration.  	It converts the first two types into their snippets of machine code, but passes the third type  	and everything else as-is to be processed later.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_c_instructions'>parse_c_instructions</span>
+
+	<span class='id identifier rubyid_processed_code'>processed_code</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_element'>element</span><span class='op'>|</span>
+		<span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='id identifier rubyid_element'>element</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+		<span class='id identifier rubyid_code'>code</span> <span class='op'>=</span> <span class='id identifier rubyid_element'>element</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+
+		<span class='kw'>next</span> <span class='id identifier rubyid_element'>element</span> <span class='kw'>unless</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>==</span> <span class='symbol'>:c_instruction</span> <span class='kw'>and</span> <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span> <span class='const'>Array</span>
+
+		<span class='kw'>if</span> <span class='id identifier rubyid_code'>code</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># then its a Operation command (i.e. &#39;MDA=D+1&#39;)
+</span>			<span class='id identifier rubyid_code'>code</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([ADM]{1,3})=([\-\!]?[ADM10][\+\-\|\&amp;]?[ADM1]?)</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
+			<span class='id identifier rubyid_destination'>destination</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#DESTINATION-constant" title="DESTINATION (constant)">DESTINATION</a></span></span><span class='lbracket'>[</span><span class='backref'>$1</span><span class='rbracket'>]</span>
+			<span class='id identifier rubyid_operation'>operation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#ANY_OPERATION-constant" title="ANY_OPERATION (constant)">ANY_OPERATION</a></span></span><span class='lbracket'>[</span><span class='backref'>$2</span><span class='rbracket'>]</span>
+
+			<span class='const'><span class='object_link'><a href="top-level-namespace.html#OPERATION_COMMAND-constant" title="OPERATION_COMMAND (constant)">OPERATION_COMMAND</a></span></span> <span class='op'>%</span> <span class='lbrace'>{</span><span class='label'>operation:</span><span class='comma'>,</span> <span class='label'>destination:</span><span class='rbrace'>}</span>
+
+		<span class='kw'>elsif</span> <span class='id identifier rubyid_code'>code</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># then it&#39;s a Jump command (i.e. &#39;A+1;JLT&#39;)
+</span>			<span class='id identifier rubyid_code'>code</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([0ADM]);(J.{2})</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span>
+			<span class='id identifier rubyid_operation'>operation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#ANY_OPERATION-constant" title="ANY_OPERATION (constant)">ANY_OPERATION</a></span></span><span class='lbracket'>[</span><span class='backref'>$1</span><span class='rbracket'>]</span>
+			<span class='id identifier rubyid_condition'>condition</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#JUMP_TYPE-constant" title="JUMP_TYPE (constant)">JUMP_TYPE</a></span></span><span class='lbracket'>[</span><span class='backref'>$2</span><span class='rbracket'>]</span>
+			
+			<span class='const'><span class='object_link'><a href="top-level-namespace.html#JUMP_COMMAND-constant" title="JUMP_COMMAND (constant)">JUMP_COMMAND</a></span></span> <span class='op'>%</span> <span class='lbrace'>{</span><span class='label'>operation:</span><span class='comma'>,</span> <span class='label'>condition:</span><span class='rbrace'>}</span>
+
+		<span class='kw'>else</span> <span class='comment'># It&#39;s a label declaration
+</span>			<span class='id identifier rubyid_code'>code</span> 
+		<span class='kw'>end</span>
+	<span class='rbrace'>}</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_label_declarations-instance_method">
+  
+    #<strong>remove_label_declarations</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes all label declarations from the code.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+164
+165
+166</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 164</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove_label_declarations'>remove_label_declarations</span>
+	<span class='id identifier rubyid_processed_code'>processed_code</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_instruction'>instruction</span><span class='op'>|</span> <span class='id identifier rubyid_label_dictionary'>label_dictionary</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_instruction'>instruction</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[\(\)]</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_label_references-instance_method">
+  
+    #<strong>set_label_references</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Assigns each label <strong>reference</strong> into its assigned program counter address. 	Anything that fails the check is passed over.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155
+156
+157
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 155</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_label_references'>set_label_references</span>
+	<span class='id identifier rubyid_processed_code'>processed_code</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_instruction'>instruction</span><span class='op'>|</span>
+		<span class='id identifier rubyid_label'>label</span> <span class='op'>=</span> <span class='id identifier rubyid_instruction'>instruction</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_label_dictionary'>label_dictionary</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_label'>label</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%016b</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id identifier rubyid_label_dictionary'>label_dictionary</span><span class='lbracket'>[</span><span class='id identifier rubyid_label'>label</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id identifier rubyid_instruction'>instruction</span>
+	<span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_variables-instance_method">
+  
+    #<strong>set_variables</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts each variable declaration and reference into its assigned memory address. 	Anything that fails the check is passed over. 	Each address is a 16-bit value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+145
+146
+147
+148
+149
+150</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 145</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_variables'>set_variables</span>
+	<span class='id identifier rubyid_processed_code'>processed_code</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_instruction'>instruction</span><span class='op'>|</span>
+		<span class='id identifier rubyid_variable'>variable</span> <span class='op'>=</span> <span class='id identifier rubyid_instruction'>instruction</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='rbracket'>]</span>
+		<span class='id identifier rubyid_variable_dictionary'>variable_dictionary</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_variable'>variable</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%016b</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id identifier rubyid_variable_dictionary'>variable_dictionary</span><span class='lbracket'>[</span><span class='id identifier rubyid_variable'>variable</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id identifier rubyid_instruction'>instruction</span>
+	<span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tokenize-instance_method">
+  
+    #<strong>tokenize</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Takes the extracted code and groups each line with the appropriate Symbol, creating a token.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'assembly_file.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_tokenize'>tokenize</span>
+	<span class='id identifier rubyid_extract_code'>extract_code</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_instruction'>instruction</span><span class='op'>|</span>
+			<span class='id identifier rubyid_instruction'>instruction</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>@</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='symbol'>:a_instruction</span><span class='comma'>,</span> <span class='id identifier rubyid_instruction'>instruction</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='symbol'>:c_instruction</span><span class='comma'>,</span> <span class='id identifier rubyid_instruction'>instruction</span><span class='rbracket'>]</span>
+		<span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sun Feb 11 23:51:30 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.34 (ruby-3.2.2).
+</div>
+
+    </div>
+  </body>
+</html>
